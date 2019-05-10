@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.time-select,
+.sound-picker,
+.player-container {
+  height: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player-container {
+  position: relative;
+}
+
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+
+.time-select button,
+.sound-picker button {
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: none;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+
+.time-select select {
+  display: block;
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.time-select select option {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.time-select select option:hover {
+  color: black;
+  background: white;
+}
+
+.time-select button:hover {
+  color: black;
+  background: white;
+}
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 50px;
+}
+
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10;
+}
+
+.sound-picker {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.sound-picker button {
+  border: none;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  padding: 25px;
+}
+
+#play {
+  cursor: pointer;
+}
+
+.waterfall {
+  color: white;
+}
+
+#videoBG {
+  position: fixed;
+  z-index: -1;
+}
+
+.copy-right {
+  position: absolute;
+  padding: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  bottom: 0;
+  color: white;
+}
+
+.sound-picker button {
+  background: rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.sound-picker button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.sound-picker button img {
+  height: 80%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videoBG {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .time-select button,
+  .time-select select {
+    width: 40%;
+    height: 10%;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .time-select button,
+  .time-select select {
+    width: 40%;
+    height: 10%;
+    font-size: 15px;
+  }
+
+  .sound-picker button img {
+    height: 70%;
+  }
+
+  .sound-picker button {
+    border: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sound-picker {
+    display: flex;
+  }
+
+  .sound-picker button {
+    background: none;
+  }
+
+  .sound-picker button img {
+    height: 80%;
+  }
+
+  .time-display {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .sound-picker {
+    display: flex;
+  }
+
+  .sound-picker button {
+    background: none;
+    border: none;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    padding: 20px;
+  }
+
+  .sound-picker button img {
+    height: 80%;
+  }
+
+  .time-display {
+    font-size: 40px;
+  }
+}
